@@ -5,7 +5,7 @@ zones:
   - us-central1-a
 filters: []
 groups:
-   localhost: "'forensic-architecture-vm' in name"
+   localhost: "'fornsic-test' in name"
 auth_kind: serviceaccount
 service_account_file: "../../Keys/forensic-265906-b9959b82808f.json"
 
