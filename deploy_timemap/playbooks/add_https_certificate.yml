@@ -17,3 +17,6 @@
     - name: Install a certificate   
       import_tasks: ../tasks/certificate.yml
       tags: [certificate]
+    - name: restart nginx
+      service: name=nginx state=restarted enabled=yes
+      tags: [nginx]
