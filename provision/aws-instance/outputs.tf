@@ -1,6 +1,6 @@
-# output "EC2-instance-ip" {
-#   value = aws_eip.EC2_IP_address.public_ip
-# }
+output "EC2-instance-ip" {
+  value = aws_eip.EC2_IP_address.public_ip
+}
 
 # output "ns-servers" {
 #   value = aws_route53_zone.domain_zone.name_servers
