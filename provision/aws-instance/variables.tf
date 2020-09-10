@@ -29,3 +29,8 @@ variable "cors_allowed_origins" {
   description = "Specifies the URLs that can access the bucket. The default is open access."
   default     = "*"
 }
+
+variable "domain" {
+  description = "Specifies the domain we register with Route53."
+  default     = "frasercrichton.tk"
+}
