@@ -7,9 +7,9 @@ variable "bucket-name" {
 variable "key_name" {
   default = "timemap-admin"
 }
-variable "private_key_location" {
-  description = "The location of your key on your file system"
-}
+# variable "private_key_location" {
+#   description = "The location of your key on your file system"
+# }
 variable "instance_type" {
   default = "t2.micro"
 }
