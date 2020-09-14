@@ -32,5 +32,4 @@ variable "cors_allowed_origins" {
 
 variable "domain" {
   description = "Specifies the domain we register with Route53."
-  default     = "frasercrichton.tk"
 }

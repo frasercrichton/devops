@@ -51,15 +51,3 @@ resource "aws_security_group" "timemap_security_group" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
-
-resource "aws_route53_zone" "domain_zone" {
-  name = var.domain
-}
-
-resource "aws_route53_record" "root_domain" {
-  zone_id = aws_route53_zone.domain_zone.zone_id
-  name    = var.domain
-  type    = "A"
-  ttl = "300"
-  records = [aws_eip.EC2_IP_address.public_ip]
-}
