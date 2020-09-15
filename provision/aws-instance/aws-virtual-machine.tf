@@ -4,7 +4,7 @@ resource "aws_instance" "timemap_vm" {
   tags            = { Name = var.instance_name }
   key_name        = var.key_name
   security_groups = [aws_security_group.timemap_security_group.name]
-  # depends_on      = [aws_s3_bucket.timemap-bucket]
+  depends_on      = [aws_s3_bucket.timemap_bucket]
   connection {
     type        = "ssh"
     host        = self.public_ip

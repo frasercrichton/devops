@@ -2,3 +2,4 @@
 private_key_location = "/your-key-location/forensic-architecture-admin.pem"
 # override any defaults below e.g.
 # instance_name        = "your-vm-name"
+# domain               = "your-domain.org"

@@ -1,12 +1,10 @@
-output "EC2-instance-ip" {
+output "EC2_instance_ip" {
   value = aws_eip.EC2_IP_address.public_ip
 }
 
-# output "ns-servers" {
-#   value = aws_route53_zone.domain_zone.name_servers
-# }
-
-data "aws_caller_identity" "current" {}
+output "name_servers" {
+  value = aws_route53_zone.forensic_architecture_base_zone.name_servers
+}
 
 output "account_id" {
   value = data.aws_caller_identity.current.account_id

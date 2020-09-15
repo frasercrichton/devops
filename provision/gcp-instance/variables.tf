@@ -23,4 +23,6 @@ variable "cors_origin" {
   default     = "*"
 }
 
-
+variable "domain" {
+  description = "Specifies the domain we register with Route53."
+}
