@@ -15,6 +15,9 @@
 	
 
 #  forensic-265906@appspot.gserviceaccount.com 
+# to do:
+# create a dedicated service account 
+# use it to authorise access to the app engine
 
 resource "google_cloudbuild_trigger" "timemap_cloud_build_trigger" {
   provider    = google-beta
