@@ -6,8 +6,9 @@ https://www.terraform.io/docs/providers/google/r/google_project.html create in b
 
 vpc
 subnet
+ https://medium.com/slalom-technology/a-complete-gcp-environment-with-terraform-c087190366f0
 
-
+https://cloud.google.com/vpc/docs/using-vpc
 
 ## Terraform
 

@@ -1,35 +1,18 @@
 variable "region" {
   default = "us-east-1"
 }
-variable "bucket_name" {
-  default = "timemap-bucket"
+variable "organisation" {
+  description = "Organisation name for tagging."
 }
-variable "key_name" {
-  default = "timemap-admin"
+variable "VPC-CIDR-block" {
+  description = "CIDR block for VPC."
+  default     = "10.0.0.0/16"
 }
-variable "private_key_location" {
-  description = "The location of your key on your file system"
+variable "public_subnet_CIDR_block" {
+  description = "CIDR block for Subnet."
+  default     = "10.0.0.0/24"
 }
-variable "instance_type" {
-  default = "t2.micro"
-}
-variable "ami" {
-  description = "The machine type defaulted to Ubuntu"
-  default     = "ami-2757f631"
-}
-variable "instance_name" {
-  description = "The EC2 name"
-  default     = "timemap-vm"
-}
-variable "connection_user" {
-  description = "The name of the ssh user used to connect to the EC2 instance"
-  default     = "ubuntu"
-}
-variable "cors_allowed_origins" {
-  description = "Specifies the URLs that can access the bucket. The default is open access."
-  default     = "*"
-}
-
-variable "domain" {
-  description = "Specifies the domain we register with Route53."
+variable "availability_zone" {
+  description = "Subnet availability zone."
+  default     = "us-east-1a"
 }

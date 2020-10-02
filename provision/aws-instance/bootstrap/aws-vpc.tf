@@ -1,37 +1,49 @@
-resource "aws_instance" "timemap_vm" {
-  ami             = var.ami
-  instance_type   = var.instance_type
-  tags            = { Name = var.instance_name }
-  key_name        = var.key_name
-  security_groups = [aws_security_group.timemap_security_group.name]
-  depends_on      = [aws_s3_bucket.timemap_bucket]
-  connection {
-    type        = "ssh"
-    host        = self.public_ip
-    user        = var.connection_user
-    private_key = file(var.private_key_location)
+
+resource "aws_vpc" "forensic_architecuture_vpc" {
+
+  cidr_block = var.VPC-CIDR-block
+
+  enable_dns_support   = true
+  enable_dns_hostnames = true
+
+  tags = {
+    Name = "Primary VPC: ${var.organisation}"
   }
-  provisioner "file" {
-    source      = "files/assets.sh"
-    destination = "/tmp/assets.sh"
-  }
-  provisioner "remote-exec" {
-    inline = [
-      "chmod +x /tmp/assets.sh",
-    "/tmp/assets.sh"]
+
+}
+
+resource "aws_internet_gateway" "internet_gate_way" {
+  vpc_id = aws_vpc.forensic_architecuture_vpc.id
+  tags = {
+    Name = "Primary Internet Gateway: ${var.organisation}"
   }
 }
 
-
-resource "aws_eip" "EC2_IP_address" {
-  vpc        = true
-  instance   = aws_instance.timemap_vm.id
-  depends_on = [aws_instance.timemap_vm]
+resource "aws_subnet" "public_subnet" {
+  vpc_id     = aws_vpc.forensic_architecuture_vpc.id
+  cidr_block = var.public_subnet_CIDR_block
+  # map_public_ip_on_launch = "true"
+  availability_zone = var.availability_zone
+  tags = {
+    Name = "Primary Subnet: ${var.organisation}"
+  }
 }
 
-resource "aws_security_group" "timemap_security_group" {
-  name        = "timemap-security-group"
-  description = "Web Security Group for Timemap EC2"
+resource "aws_route_table" "public_route_table" {
+  vpc_id = aws_vpc.forensic_architecuture_vpc.id
+  route {
+    cidr_block = "0.0.0.0/0"
+    gateway_id = aws_internet_gateway.internet_gate_way.id
+  }
+  tags = {
+    Name = "Primary Public Route Table: ${var.organisation}"
+  }
+}
+
+resource "aws_security_group" "forensic_architecure_vpc_security_group" {
+  name        = "forensic-architecure-vpc-security-group"
+  description = "Security Group for VPC"
+  vpc_id      = aws_vpc.forensic_architecuture_vpc.id
   ingress {
     from_port   = 80
     to_port     = 80
@@ -49,5 +61,22 @@ resource "aws_security_group" "timemap_security_group" {
     to_port     = 0
     protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
+  }
+  tags = {
+    Name = "Primary Subnet: ${var.organisation}"
+  }
+}
+
+
+# subnet_id     = "${module.vpc.subnets[0]}"
+
+resource "aws_instance" "testInstance" {
+  ami                    = "ami-2757f631"
+  instance_type          = "t2.micro"
+  subnet_id              = aws_subnet.public_subnet.id
+  vpc_security_group_ids = [aws_security_group.forensic_architecure_vpc_security_group.id]
+  //key_name = "${aws_key_pair.ec2key.key_name}"
+  tags = {
+    Name = "Instance: ${var.organisation}"
   }
 }

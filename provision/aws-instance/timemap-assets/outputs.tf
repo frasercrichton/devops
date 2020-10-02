@@ -2,6 +2,10 @@ output "EC2_instance_ip" {
   value = aws_eip.EC2_IP_address.public_ip
 }
 
+output "EC2_instance_id" {
+  value = aws_eip.EC2_IP_address.id
+}
+
 output "name_servers" {
   value = aws_route53_zone.forensic_architecture_base_zone.name_servers
 }

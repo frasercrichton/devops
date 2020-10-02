@@ -1,6 +1,6 @@
 
 resource "aws_route53_zone" "forensic_architecture_base_zone" {
-  name        = var.domain
+  name = var.domain
 }
 
 resource "aws_route53_record" "a_record" {
@@ -17,16 +17,16 @@ resource "aws_route53_record" "a_record" {
 #   ttl          = 300
 #   zone_id = aws_route53_zone.forensic_architecture_base_zone.zone_id
 #   records      = [aws_route53_zone.forensic_architecture_base_zone.name]
- 
+
 # }
 
-resource "dns_cname_record" "cname" {
-  zone  = "${var.domain}."
-  name  = "www ${var.domain}"
-  cname = "www.${var.domain}."
-  ttl   = 300
-}
+# resource "dns_cname_record" "cname" {
+#   zone  = "${var.domain}."
+#   name  = "www ${var.domain}"
+#   cname = "www.${var.domain}."
+#   ttl   = 300
+# }
 
-data "dns_ns_record_set" "aws" {
-  host = var.domain
-}
+# data "dns_ns_record_set" "aws" {
+#   host = var.domain
+# }
