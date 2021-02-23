@@ -1,0 +1,129 @@
+domain_name: curfewbell.space
+use_https: true
+NAME: curfew
+datasheet:
+  service_account:
+    email: forensic-265906@appspot.gserviceaccount.com
+    private_key: -----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQD5vao1nSIYsYuu\n0csApLgY2XEfljlniEua8hqQJuquyNYDuJQQ0r9fWTd7/ptI0RE8xFuJbfrb2xLj\njitFmtzFI9/rgJd3vL+hVMszTRPxtuj8UBsu8SjMYY4qafFA0EtpQTIdKyNT0ORC\nq+D4IIns4xv0SXt+0PFUE8UyroXzWocNxn43qk0Omu6EwDdUxiBHsQHL5jxFoFUu\nShwT5N/s0xTXiMmBBV7P+ru4CedkqEc+DX8oNNoF2uyI0XTkGi2GKZiGOUI56xnM\nnqDGW/cFcoSnWDYHsot4tEGIQds2IgmwnXHx2Kh3OG+EcU0+Aa9W+3EKgXW7or6D\nmE1xThjhAgMBAAECggEAA4fVZK2kgkHcTivkGU261osYaNBoXljUbMvYaUpLjg4D\nzIiq+zPnhbMOsD+QtW5TNo82FhLKdZo6waHMZc8DKPxRWZR3T7eI5AB9YOvJiOTD\nlXGSeM7q+zyz1FCsGvT24/WKflQSS0iMOY8RfqCDIqixR/pT9x6AEua2pnlGJoMN\neGNHSJVO9XW5LvXoPTPWso1xcNgV/4GGU2DWTUYPLteTmCdmSqQ5XVvD7WuxFAXD\nIhGGNyFgcu8v3XWPrmyCow61qapB5iV4Ta0KO1Xs4VHLzL8jBaZVgbgHoav76aRR\nJ3CRY+vgfo6yFvhb+z5HCCVkcrPCTNgUiPDY7IEG4wKBgQD/5WBuPXgDcf1Ye/ax\nOvBCL4zckvuV68w5wmmEfPzGibKnc8sSUq/F5gfC2GJY0rOTWJxTZ4ByLzU5DG0p\ndhLQJzetLwkTwYOUkKbjewB12Jg2AUUUtJL6eSL8hcD2Q2dzChEvg8XwPvXpyDKB\nwIMUmQq8lTH+4uo1Yw/G0VOZ0wKBgQD516XXpgj3wBImFBc/42GRuZrSY3Xz997t\n/tQbxceBuJKPczdOctrGwh/ude77pyM3vgZMlzujBU5OCkvwzf460EYh8jgtQOcM\n/+nzEh4+GkqX/zOpDR5q/cLoh2BEPWgqrlyBSwvVzY1chP9lOkeuYYkziLujcSNc\nxhMh0DU9+wKBgG79BOMrpAcShMjBE5FxN83tI9Jzqc0vtaeDrBJ7x4MxLBy2+2ga\nFwTlrY4UHivaT2rkLwF5zds4oIP64Mnv3V8M83gZA33fG/vu9YOK0PtME1CxIk5F\nt84NhmAyfywQtijOP//0zoBSPoTEgSuH3RKtAlwi9clQkDbRnYElP3ZjAoGAB1Wx\nZLdXJA7beYq1dAa04pZUWUDaQaNRRCNrDrWrub81bkivovn0OkmQrmt/7JtniUdm\n3/DAq3SIa/oZaKRjhk5/AJgf1hRFtDf/Ikex45jZ/8RaO+hKsFFq23C9/sLewAIG\nbTVKz6gNMl4lMU+YsyHh6UVmXNIBe8PE5AU8yukCgYEAgxM3WuPiXPNDeyEV/Scy\np2y3McJZ/EByzzBpd5Y46MuCl1c0HKCunPd6IXbz2wR5caS1tInzkvgdxt3TS9PN\ncnCPYMgoLph+iljgGP1zxoRL81RFrv27Au3NnYCxZYfOxvXSmcg5h2Pp/wb/mJE5\n7OiKLgU1NooclRkh55z6FUk=\n-----END PRIVATE KEY-----\n
+  port: 4040  
+  gsheets:
+    - name: curfew
+      id: 1rH3lsBQfSTKZqFGANM4BLK0PA-xD-ykTiR2f9SPqADI
+timemaps:
+  - name: curfew  
+    display_name: 'The Curfew Bell'  
+    date_fmt: 'DD/MM/YYYY'
+    time_fmt: 'HH:mm'
+    mapbox_token: 'pk.eyJ1IjoiZnJhc2VyYyIsImEiOiJjazJ2dWx6bHMwOGRiM2RueGJoZnhyazhnIn0._uqEizdOhsnp3SLJEK1iVw'
+    store:
+      app: 
+        map: 
+          minZoom: 3
+          maxZoom: 15
+          startZoom: 4
+          maxBounds: [31.7860603,-132.0853276]
+          anchor: [24.546764, -89.2311267]
+        timeline: 
+          zoomLevels:
+              - label: '2 Weeks'
+                duration: 20160
+              - label: '1 week'
+                duration: 10080
+              - label: '1 day'
+                duration: 1440
+              - label: '12 hours'
+                duration: 720
+          range: ['2020-05-25T00:00:00.000Z', '2020-06-14T00:00:00.000Z']
+          rangeLimits: ['2020-04-01T00:00:00.000Z', '2021-06-31T00:00:00.000Z']      
+      features:
+        USE_CATEGORIES: true   
+        USE_COVER: false
+        USE_FILTERS: true
+        USE_SEARCH: true
+        USE_SITES: true
+        USE_SOURCES: true
+        USE_NARRATIVES: true
+        NARRATIVE_STEP_STYLES: false
+        CATEGORIES_AS_TAGS: false
+        ASSOCIATIVE_EVENTS_BY_TAG: false
+        USE_SHAPES: false
+        HIGHLIGHT_GROUPS: true
+      ui:
+        tiles: 'fraserc/ckbe9euif0blw1jmldqxe9a1n'
+        style:
+          categories:  
+            Curfew: '#C813DD'
+            Incident: '#220064'
+          narratives: 
+            default: 
+              stroke: none
+          shapes: 
+            default: 
+              stroke: blue
+              strokeWidth: 3
+              opacity: 0.9
+  - name: curfew-bell  
+    display_name: 'The Curfew Bell'  
+    date_fmt: 'DD/MM/YYYY'
+    time_fmt: 'HH:mm'
+    mapbox_token: 'pk.eyJ1IjoiZnJhc2VyYyIsImEiOiJjazJ2dWx6bHMwOGRiM2RueGJoZnhyazhnIn0._uqEizdOhsnp3SLJEK1iVw'
+    store:
+      app: 
+        map: 
+          minZoom: 3
+          maxZoom: 15
+          startZoom: 4
+          maxBounds: [31.7860603,-132.0853276]
+          anchor: [24.546764, -89.2311267]
+        timeline: 
+          zoomLevels:
+              - label: '2 Weeks'
+                duration: 20160
+              - label: '1 week'
+                duration: 10080
+              - label: '1 day'
+                duration: 1440
+              - label: '12 hours'
+                duration: 720
+          range: ['2020-05-25T00:00:00.000Z', '2020-06-14T00:00:00.000Z']
+          rangeLimits: ['2020-04-01T00:00:00.000Z', '2021-06-31T00:00:00.000Z']      
+        cover:
+          title: 'The Curfew Bell'
+          subtitle: 'Emergency Order Curfews: Police Violence against the press and the suppression of legitimate protest in the United States 2020'
+          description: '<p>The Curfew Bell is a visual investigation into the use of emergency order curfews in the United States to suppress both the reporting of the protests that followed the police killing of George Floyd and the protests themselves. The curfews tracked here lasted through May 26 to June 8 2020. This period saw unprecedented police violence against the media and protestors alike.</p><p align="center"><img height="400" src="https://storage.googleapis.com/rake-community/CurfewBellAndTowerMtMorrisParkNEWYORK.jpg" /> </p> <p class="footnote">The project was initiated through <a href="https://www.rakecollective.com/community">Rake Community</a> as a collaboration between <a href="https://www.frasercrichton.com">Fraser Crichton</a> and <a href="https://www.instagram.com/gulcetulcali/">Gülce Tulçalı</a>.</p> <p class="footnote">The data combines incidents of violence against the press from the <a href="https://pressfreedomtracker.us">U.S. Press Freedom Tracker</a> and data on the curfews from <a href="https://www.rcfp.org/protest-curfew-order-tracker">Reporters Committee for Freedom of the Press</a> under a Creative Commons licence.</p><p class="footnote">The platform uses Open Source software developed by <a href="https://forensic-architecture.org">Forensic Architecture</a> specifically: <a href="https://github.com/forensic-architecture/datasheet-server">Datasheet server</a> and <a href="https://github.com/forensic-architecture/timemap">Timemap</a>.</p>'
+          headerVideos: 
+            - buttonTitle: 'CONTEXT'
+              desc: 'This film details the investigation''s methodology and findings at a high level.'
+              file: 'https://storage.googleapis.com/rake-community/rake.mp4'
+              poster: 'https://storage.googleapis.com/rake-community/curfew-bell-screen.png'
+              title: 'The Curfew Bell'
+      features:
+        USE_CATEGORIES: true   
+        USE_COVER: true
+        USE_FILTERS: true
+        USE_SEARCH: true
+        USE_SITES: true
+        USE_SOURCES: true
+        USE_NARRATIVES: true
+        NARRATIVE_STEP_STYLES: false
+        CATEGORIES_AS_TAGS: false
+        ASSOCIATIVE_EVENTS_BY_TAG: false
+        USE_SHAPES: false
+        HIGHLIGHT_GROUPS: true
+      ui:
+        tiles: 'fraserc/ckbe9euif0blw1jmldqxe9a1n'
+        style:
+          categories: 
+            Curfew: '#C813DD'
+            Incident: '#220064'
+          narratives: 
+            default: 
+              stroke: none
+          shapes: 
+            default: 
+              stroke: blue
+              strokeWidth: 3
+              opacity: 0.9              
+    
+
+          
